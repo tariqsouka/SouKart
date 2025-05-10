@@ -1,106 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SouKart - Riddle Entry</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #eee;
-      text-align: center;
-      padding: 2rem;
-    }
-    .riddle-box {
-      max-width: 600px;
-      margin: auto;
-      padding: 1.5rem;
-      background-color: #222;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.05);
-    }
-    button {
-      margin: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #444;
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background-color: #666;
-    }
-    .section {
-      display: none;
-      margin-top: 2rem;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    audio {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SouKart</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header with Logo -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="SouKart Logo" class="logo">
+        </div>
+        <div class="path-choice">Choose your own path</div>
+    </header>
 
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6ad0b6810b.mp3" type="audio/mpeg">
-</audio>
+    <!-- Main Section -->
+    <div class="main-content">
+        <div class="center-text">
+            <p>You Can't See All We Have</p>
+            <p>You Can Only See What You Really Want</p>
+        </div>
 
-<div class="riddle-box">
-  <h2>Riddle 1</h2>
-  <p>I come in two forms, simple and clear,<br>
-     One may be "he," the other "dear."<br>
-     Not chosen at birth, but later by voice—<br>
-     What am I?</p>
-  <button onclick="showSection('male')">Male</button>
-  <button onclick="showSection('female')">Female</button>
-</div>
+        <!-- Invisible Door -->
+        <div class="door-container">
+            <div class="door" onclick="openDoor()">
+                <div class="handle"></div>
+            </div>
+            <p class="door-text">Open me if you are smart enough</p>
+        </div>
+        
+        <!-- Riddles on Sides -->
+        <div class="side-riddles">
+            <div class="riddle">
+                <h3>Riddle 1:</h3>
+                <p>I walk in truth, with facts in hand...</p>
+                <button onclick="chooseWorld('real')">Real Stories</button>
+                <button onclick="chooseWorld('fantasy')">Fantasy Stories</button>
+            </div>
+            <div class="riddle">
+                <h3>Riddle 2:</h3>
+                <p>My world has maps you’ll never find...</p>
+                <button onclick="chooseWorld('real')">Real Stories</button>
+                <button onclick="chooseWorld('fantasy')">Fantasy Stories</button>
+            </div>
+        </div>
+    </div>
 
-<div id="male" class="section">
-  <h3>Welcome to the Male-Themed Section</h3>
-  <img src="https://via.placeholder.com/500x300/222/eee?text=Male+Theme" alt="Male Section Image">
-</div>
-
-<div id="female" class="section">
-  <h3>Welcome to the Female-Themed Section</h3>
-  <img src="https://via.placeholder.com/500x300/333/eee?text=Female+Theme" alt="Female Section Image">
-</div>
-
-<!-- To add more riddles: copy the structure below and modify as needed
-<div class="riddle-box">
-  <h2>Riddle 2</h2>
-  <p>Your next riddle goes here...</p>
-  <button onclick="showSection('next1')">Answer 1</button>
-  <button onclick="showSection('next2')">Answer 2</button>
-</div>
-
-<div id="next1" class="section">
-  <h3>Section for Answer 1</h3>
-  <img src="..." alt="">
-</div>
-
-<div id="next2" class="section">
-  <h3>Section for Answer 2</h3>
-  <img src="..." alt="">
-</div>
--->
-
-<script>
-  function showSection(id) {
-    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-  }
-</script>
-
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
