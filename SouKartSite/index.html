@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SouKart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header>
+        <div class="logo-container">
+            <div class="logo">SouKart</div>
+        </div>
+        <div class="path-choice">Choose your own path</div>
+    </header>
+
+    <!-- Main Section -->
+    <div class="main-content">
+        <div class="center-text">
+            <p>You Can't See All We Have</p>
+            <p>You Can Only See What You Really Want</p>
+        </div>
+
+        <!-- Invisible Door -->
+        <div class="door-container">
+            <div class="door" onclick="openDoor()">
+                <div class="handle"></div>
+            </div>
+            <p class="door-text">Open me if you are smart enough</p>
+        </div>
+        
+        <!-- Riddles on Sides -->
+        <div class="side-riddles">
+            <div class="riddle">
+                <h3>Riddle 1:</h3>
+                <p>I walk in truth, with facts in hand...</p>
+                <button onclick="chooseWorld('real')">Real Stories</button>
+                <button onclick="chooseWorld('fantasy')">Fantasy Stories</button>
+            </div>
+            <div class="riddle">
+                <h3>Riddle 2:</h3>
+                <p>My world has maps you’ll never find...</p>
+                <button onclick="chooseWorld('real')">Real Stories</button>
+                <button onclick="chooseWorld('fantasy')">Fantasy Stories</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
