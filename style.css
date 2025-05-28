@@ -1,0 +1,396 @@
+body {
+    background-color: #000;
+    color: #fff; /* Default text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scroll from sparkles */
+    position: relative; /* Needed for pseudo-elements if used for effects */
+}
+
+header {
+    padding: 20px;
+    position: relative; /* For positioning child elements */
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    /* Additional styling for the logo will be added later if a specific font/image is used */
+}
+
+.path-choice-text {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1em;
+    font-style: italic;
+}
+
+main {
+    padding: 20px;
+}
+
+.intro-text {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+.door-section {
+    margin-bottom: 50px;
+}
+
+.door {
+    width: 120px; /* Slightly wider */
+    height: 180px; /* Slightly taller */
+    background-color: rgba(51, 51, 51, 0.3); /* Semi-transparent background */
+    margin: 30px auto 20px auto; /* Adjusted margin */
+    border: 3px solid rgba(85, 85, 85, 0.7); /* Semi-transparent border */
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners for the door */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Subtle glow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.door:hover {
+    background-color: rgba(68, 68, 68, 0.4); /* Slightly more visible on hover */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2); /* Enhanced glow on hover */
+}
+
+.door-handle {
+    width: 15px; /* Adjusted size */
+    height: 30px; /* More like a handle */
+    background-color: rgba(119, 119, 119, 0.8); /* Semi-transparent handle */
+    border: 1px solid rgba(50, 50, 50, 0.9);
+    border-radius: 5px; /* Rounded handle */
+    position: absolute;
+    top: 50%;
+    left: 15px; /* Positioned slightly from the left */
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.door-cta {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.riddles-section {
+    display: flex;
+    justify-content: space-around; /* Places riddles side-by-side with space */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens if necessary */
+    margin-top: 40px;
+}
+
+.riddle-container {
+    border: 1px solid #444;
+    padding: 20px;
+    width: 40%; /* Adjust as needed */
+    min-width: 300px; /* Minimum width before wrapping */
+    margin: 10px;
+    background-color: #111; /* Slightly lighter than body background */
+    border-radius: 8px;
+}
+
+.riddle-container h3 {
+    color: #eee;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+.riddle-icon {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.choices button {
+    background-color: #003366; /* Dark blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.choices button:hover {
+    background-color: #00509E; /* Lighter blue for hover */
+}
+
+.feedback {
+    margin-top: 10px;
+    color: #ff4444; /* Red color for error messages */
+    font-weight: bold;
+}
+
+footer {
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    font-size: 0.8em;
+}
+
+/* Sparkles effect */
+@keyframes sparkle {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
+    100% { background-position: 500px 1000px, 400px 400px, 300px 300px; }
+}
+
+.sparkles-bg { /* This class will be added to the body via JS for the effect */
+    background-image:
+        radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,0) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,0) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0px 0px, 40px 60px, 130px 270px, 70px 100px;
+    animation: sparkle 200s linear infinite;
+}
+
+/* Simple Fire Effect (using box-shadows on a pseudo-element or a dedicated div) */
+/* This is a very simplified representation. True fire effect is complex. */
+/* We can add a div for this at the bottom of the body if desired */
+.fire-effect-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust height of the fire effect area */
+    pointer-events: none; /* So it doesn't interfere with clicks */
+    overflow: hidden;
+    z-index: -1; /* Behind other content */
+}
+
+@keyframes flicker {
+  0%, 100% { box-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500, 0 0 15px #ff8c00, 0 0 20px #ff8c00; opacity: 1; }
+  50% { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff8c00, 0 0 40px #ff8c00; opacity: 0.8; }
+}
+
+.fire-particle {
+    position: absolute;
+    bottom: -20px; /* Start below the container */
+    width: 10px;
+    height: 10px;
+    background: #ff4500; /* OrangeRed */
+    border-radius: 50%;
+    animation: flicker 1.5s infinite, rise 3s infinite linear;
+    opacity: 0; /* Start invisible, fade in with rise */
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    20% { opacity: 0.8; } /* Become visible quickly */
+    100% { transform: translateY(-80px) scale(0.5); opacity: 0; } /* Rise and fade out */
+}
+
+/* Add multiple fire particles with delays for a better effect in HTML later */
+/* Example:
+   <div class="fire-effect-container">
+       <div class="fire-particle" style="left: 10%; animation-delay: 0s, 0s;"></div>
+       <div class="fire-particle" style="left: 20%; animation-delay: 0.5s, 0.5s;"></div>
+       ...
+   </div>
+*/
+
+/* Styling for VIP Riddle Page (vip_riddle.html) */
+.riddle-page-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Ensure it takes up most of the viewport height */
+    padding: 20px;
+}
+
+.riddle-content {
+    background-color: #111; /* Similar to homepage riddle containers */
+    padding: 30px 40px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.riddle-content h2 {
+    color: #eee;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.riddle-text {
+    font-size: 1.2em;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ccc;
+}
+
+.answer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between input and button */
+}
+
+.answer-section input[type="text"] {
+    padding: 12px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.answer-section button {
+    background-color: #004488; /* A different shade of blue */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.answer-section button:hover {
+    background-color: #0066CC; /* Lighter blue for hover */
+}
+
+#vipRiddleFeedback { /* Already has .feedback class, this is for specificity if needed */
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+/* Styling for Gender Selection Pages */
+.gender-selection-main {
+    padding: 20px;
+    text-align: center;
+}
+
+.gender-selection-main h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+}
+
+.riddles-container-gender {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px; /* Adds space between riddle containers if they wrap */
+}
+
+/* Using .riddle-container class for individual riddles, already styled.
+   Ensure these styles are compatible or override if necessary.
+   The existing .riddle-container styles should mostly work.
+   We might add specific overrides within theme classes. */
+
+/* Theme-specific base styling */
+.theme-real {
+    /* background-color: #f4f4f4; /* Example: Lighter background for real theme */
+    /* color: #333; */
+    /* Using dark theme for consistency as per original request, but can be changed */
+}
+
+.theme-fantasy {
+    /* Specific fantasy styles will be added here */
+    /* Example: background-image: url('assets/fantasy_bg.jpg'); */
+}
+
+/* Adjust riddle container for gender page if needed */
+.gender-selection-main .riddle-container {
+    width: 45%; /* Adjust width for two items side-by-side */
+    min-width: 320px;
+    /* background-color: #1a1a1a; Slightly different from homepage riddles if desired */
+}
+
+.gender-selection-main .riddle-container h3 {
+    font-size: 1.5em;
+}
+
+/* Real Theme Specifics */
+.theme-real .logo, .theme-real .path-choice-text {
+    /* color: #111; /* If background was light */
+}
+.theme-real .gender-selection-main h2 {
+    /* color: #222; */
+}
+/* We are keeping the dark theme consistent as per the initial request (black background).
+   If a "realistic" theme means a departure from black, these would be more distinct.
+   For now, "real" theme will be more about subtle, clean design elements rather than a drastic color change from black.
+*/
+.theme-real .riddle-container {
+    border: 1px solid #555; /* Slightly more defined border */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+.theme-real .choices button {
+    background-color: #004080; /* Sober blue */
+}
+.theme-real .choices button:hover {
+    background-color: #0059b3;
+}
+
+
+/* Fantasy Theme Specifics */
+.theme-fantasy {
+    /* Example: Could add a subtle texture or pattern if an image isn't used. */
+    /* background: #000 url('assets/fantasy_pattern.png') repeat; */ /* User would need to provide pattern */
+}
+
+.theme-fantasy .gender-selection-main h2 {
+    font-family: 'Times New Roman', Times, serif; /* More classic/fantasy font */
+    color: #FFD700; /* Gold color for fantasy titles */
+    text-shadow: 1px 1px 2px #000;
+}
+
+.theme-fantasy .riddle-container {
+    border: 1px solid #8B4513; /* SaddleBrown border, like old parchment or wood */
+    background-color: rgba(0,0,0,0.3); /* More transparency if there's a bg image */
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.3); /* Orange glow */
+}
+
+.theme-fantasy .riddle-container h3 {
+    color: #FFDEAD; /* NavajoWhite, for a softer fantasy text */
+    font-family: 'Georgia', serif;
+}
+
+.theme-fantasy .choices button {
+    background-color: #4B0082; /* Indigo */
+    color: #FFD700; /* Gold text */
+    font-family: 'Georgia', serif;
+    border: 1px solid #FFD700;
+}
+
+.theme-fantasy .choices button:hover {
+    background-color: #800080; /* Purple */
+    box-shadow: 0 0 10px #FFD700;
+}
+
+/* Placeholder for fantasy background elements like dragons, fire, wizards */
+/* This could be achieved with pseudo-elements or actual images if provided */
+.theme-fantasy::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Deepest background layer */
+    /* background: url('assets/fantasy_backdrop.jpg') no-repeat center center fixed; */
+    /* background-size: cover; */
+    /* opacity: 0.3; */ /* Subtle background image */
+    /* User needs to provide 'fantasy_backdrop.jpg' */
+}

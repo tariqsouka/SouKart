@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SouKart - Choose Your Path</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SouKart</div>
+        <nav class="path-choice-text">Choose your own path.</nav>
+    </header>
+
+    <main>
+        <section class="intro-text">
+            <p>You Can't See All We Have</p>
+            <p>You Can Only See What You Really Want.</p>
+        </section>
+
+        <section class="door-section">
+            <div class="door" id="vipDoor">
+                <div class="door-handle"></div>
+            </div>
+            <p class="door-cta">Open me if you are smart enough.</p>
+        </section>
+
+        <section class="riddles-section">
+            <div class="riddle-container" id="riddleReal">
+                <div class="riddle-icon">📖</div> <!-- Book icon -->
+                <h3>Riddle 1: The Path of Truth</h3>
+                <p>I walk in truth, with facts in hand,<br>
+                   No dragons here, just real-world land.<br>
+                   You’ll find me in memoir, news, or lore,<br>
+                   Where what has happened opens the door.<br>
+                   If tales must be true, and myths you shun<br>
+                   Which world do you find more fun?</p>
+                <div class="choices">
+                    <button data-riddle="real" data-answer="real_stories">Real Stories</button>
+                    <button data-riddle="real" data-answer="fantasy_stories">Fantasy Stories</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="riddle-container" id="riddleFantasy">
+                <h3>Riddle 2: The Path of Wonders</h3>
+                <p>My world has maps you’ll never find,<br>
+                   With talking beasts and ancient minds.<br>
+                   Wizards, quests, and magic rings—<br>
+                   Do you prefer these wondrous things?<br>
+                   If you seek stars, not just the sun<br>
+                   Which world do you find more fun?</p>
+                <div class="choices">
+                    <button data-riddle="fantasy" data-answer="real_stories">Real Stories</button>
+                    <button data-riddle="fantasy" data-answer="fantasy_stories">Fantasy Stories</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Optional footer content -->
+    </footer>
+
+    <div class="fire-effect-container">
+        <div class="fire-particle" style="left: 10%; animation-delay: 0s, 0s;"></div>
+        <div class="fire-particle" style="left: 15%; animation-delay: 0.2s, 0.2s;"></div>
+        <div class="fire-particle" style="left: 20%; animation-delay: 0.5s, 0.5s;"></div>
+        <div class="fire-particle" style="left: 30%; animation-delay: 0.1s, 0.1s;"></div>
+        <div class="fire-particle" style="left: 40%; animation-delay: 0.3s, 0.3s;"></div>
+        <div class="fire-particle" style="left: 50%; animation-delay: 0.6s, 0.6s;"></div>
+        <div class="fire-particle" style="left: 60%; animation-delay: 0.2s, 0.2s;"></div>
+        <div class="fire-particle" style="left: 70%; animation-delay: 0.4s, 0.4s;"></div>
+        <div class="fire-particle" style="left: 80%; animation-delay: 0.1s, 0.1s;"></div>
+        <div class="fire-particle" style="left: 85%; animation-delay: 0.3s, 0.3s;"></div>
+        <div class="fire-particle" style="left: 90%; animation-delay: 0s, 0s;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

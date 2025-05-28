@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SouKart - Choose Your Gender (Fantasy)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-fantasy"> <!-- Theme class for specific styling -->
+    <header>
+        <div class="logo">SouKart</div>
+        <nav class="path-choice-text">The Path of Wonders</nav>
+    </header>
+
+    <main class="gender-selection-main">
+        <h2>Forge Your Legend</h2>
+        <div class="riddles-container-gender">
+            <div class="riddle-container" id="riddleMaleFantasy">
+                <h3>Riddle 3: The Dragon's Roar</h3> <!-- Slightly themed title -->
+                <p>In ancient tales of sword and fire,<br>
+                   I’ve led the charge, climbed ever higher.<br>
+                   With dragons faced and battles won,<br>
+                   They call me brother, knight, or son.<br>
+                   Though strength I bear, I feel as well<br>
+                   What gender does this story tell?</p>
+                <div class="choices">
+                    <button data-riddle="male" data-answer="male">Male</button>
+                    <button data-riddle="male" data-answer="female">Female</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="riddle-container" id="riddleFemaleFantasy">
+                <h3>Riddle 4: The Sorceress's Path</h3> <!-- Slightly themed title -->
+                <p>By moonlit charm and starlit grace,<br>
+                   I’ve cast my spells in every place.<br>
+                   With wisdom deep and heart so wide,<br>
+                   They call me queen, or mage, or bride.<br>
+                   Fierce and kind, I wear no veil<br>
+                   What gender walks this winding tale?</p>
+                <div class="choices">
+                    <button data-riddle="female" data-answer="female">Female</button>
+                    <button data-riddle="female" data-answer="male">Male</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Optional footer content -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
