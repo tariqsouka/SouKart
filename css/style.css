@@ -1,0 +1,209 @@
+/* General body styling (can be adjusted later) */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif; /* Common, clean font */
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    padding: 20px; /* Adjust padding as needed, added horizontal padding */
+    background-color: #f8f8f8; /* Light background for the header */
+    border-bottom: 1px solid #e7e7e7; /* Subtle border */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Website name styling */
+.website-name {
+    /* text-align: right; Removed */
+    font-size: 1.5em; /* 24px equivalent if base font-size is 16px */
+    padding-left: 20px; /* Adjusted to padding-left */
+    /* If using flexbox/grid for more complex layouts in the header later: */
+    /* display: flex; */
+    /* justify-content: flex-end; */
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+    font-size: 1.5em; /* Match website name prominence */
+    text-decoration: none;
+    color: #333; /* Example color, same as default text */
+    padding-right: 20px; /* Add some padding on the right */
+}
+
+/* Main content styling */
+main {
+    /* Ensures main content takes up available space, adjust as needed */
+    /* For example, if you have a sticky footer, you might use padding-bottom */
+}
+
+/* Hero section styling */
+.hero-section {
+    /* Placeholder background for home page image */
+    background-image: url('https://placekitten.com/1200/800'); /* Placeholder image */
+    background-color: #cccccc; /* Fallback color */
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh; /* Or a fixed pixel value like 600px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero text styling */
+.hero-text {
+    text-align: center;
+    font-family: 'Georgia', cursive, sans-serif; /* Catchy font, with fallbacks */
+    font-size: 2em; /* Or 32px */
+    color: #ffffff; /* White text for better contrast with a dark/image background */
+    padding: 20px;
+    max-width: 80%; /* Control text flow */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    border-radius: 10px; /* Optional: rounded corners for the text background */
+}
+
+/* HODOR Icon styling (placeholder) */
+#hodor-icon {
+    position: fixed; /* Or absolute, depending on scroll behavior desired */
+    right: 20px;
+    bottom: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: #f0f0f0; /* Placeholder background */
+    border: 2px solid #ccc;
+    box-shadow: 3px 3px 5px #888888;
+    border-radius: 50%; /* Make it circular, common for icons */
+    cursor: pointer;
+    display: flex; /* For centering content if we put text/image inside */
+    align-items: center;
+    justify-content: center;
+    /* Add an image or text here later via JS or direct HTML if preferred */
+}
+
+/* Styling for pages/hodor_riddle.html */
+.riddle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* Give some space from the top */
+}
+
+.riddle-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    max-width: 600px; /* Limit width for readability */
+}
+
+.riddle-container input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px; /* Max width for the input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.riddle-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff; /* Bootstrap primary blue, or any color you prefer */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.riddle-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Specific body styling for riddle page if needed, otherwise global body styles apply */
+/* For example, if you want to ensure the .riddle-container is centered on the page: */
+/* body.riddle-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top, margin-top on container will push it down */
+/*    min-height: 100vh;
+}*/
+
+/* Ensure h1 on riddle page is also centered if body isn't flex */
+/* h1 { text-align: center; margin-top: 20px; } /* This might affect other h1s, be specific */
+
+/* Navigation Options on Home Page */
+.navigation-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the boxes */
+    padding: 40px 20px; /* Padding above/below and on sides */
+    margin-top: 20px; /* Space below hero section or other content */
+    margin-bottom: 20px; /* Space above footer or next content */
+}
+
+.nav-box {
+    padding: 20px 40px;
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 8px; /* Optional: rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-box:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: add shadow on hover */
+}
+
+/* General styling for headers on other pages to match main page header if desired */
+/* This ensures consistency if the full header isn't reused */
+/* body > header { ... } /* This was the original header style */
+/* main > h1 { text-align: center; margin-top: 20px; margin-bottom: 20px; } */
+/* main > p { text-align: center; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 20px; } */
+/* main > a { display: block; text-align: center; margin-top: 20px; } */
+
+/* Footer styling */
+footer {
+    width: 100%;
+    padding: 20px 0; /* Padding top/bottom, 0 left/right as width is 100% */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    margin-top: 40px; /* Space above the footer */
+    /* position: relative; */ /* Or fixed/absolute if a sticky footer is desired later */
+    /* bottom: 0; */ /* For sticky footer */
+}
+
+footer p {
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* Styling for the main content of the Contact Us page */
+.contact-main {
+    padding: 20px;
+    text-align: center; /* Center the text content */
+}
+
+.contact-main h1 {
+    margin-bottom: 20px; /* Add some space below the main heading */
+}
+
+.contact-main p {
+    margin-bottom: 20px; /* Add some space below the paragraph */
+    max-width: 600px; /* Optional: constrain width for readability */
+    margin-left: auto; /* Center block elements with max-width */
+    margin-right: auto; /* Center block elements with max-width */
+}
+
+.contact-main a {
+    display: inline-block; /* Allow padding and better link styling */
+    margin-top: 10px;
+    /* Additional link styling can go here if needed */
+}
